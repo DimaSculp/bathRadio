@@ -1,0 +1,32 @@
+/* bathRadio — section styling injected into ESPHome web UI */
+.br-panel {
+  margin: 1rem 0 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #0f766e 0%, #134e4a 55%, #042f2e 100%);
+  color: #ecfdf5;
+  box-shadow: 0 8px 24px rgba(15, 118, 110, 0.35);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.br-panel h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.25rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+.br-panel p {
+  margin: 0 0 0.75rem;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.br-mode {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  font-weight: 600;
+  text-transform: lowercase;
+}
