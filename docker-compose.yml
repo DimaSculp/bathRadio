@@ -1,0 +1,34 @@
+# bathRadio — Home Assistant + ESPHome on the laptop (Docker Desktop / Windows)
+# Docs: https://www.home-assistant.io/installation/linux#install-home-assistant-container
+# ESPHome: https://esphome.io/guides/getting_started_command_line.html
+
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    container_name: bathradio-ha
+    restart: unless-stopped
+    privileged: true
+    environment:
+      TZ: Asia/Yekaterinburg
+    volumes:
+      - ./homeassistant/config:/config
+    ports:
+      - "8123:8123"
+    # On Linux you can use network_mode: host instead of ports.
+    # Docker Desktop for Windows does not support host networking well.
+
+  esphome:
+    image: ghcr.io/esphome/esphome:stable
+    container_name: bathradio-esphome
+    restart: unless-stopped
+    environment:
+      TZ: Asia/Yekaterinburg
+      ESPHOME_DASHBOARD_USE_PING: "true"
+    volumes:
+      - ./esphome:/config
+      # USB serial for first flash (COM11 on the host).
+      # On Docker Desktop Windows, attach the device in Docker settings
+      # or flash via ESPHome Web / native ESPHome once if USB passthrough fails.
+    ports:
+      - "6052:6052"
+    command: dashboard /config

@@ -1,0 +1,24 @@
+# Secrets — never commit real passwords or API keys
+**/secrets.yaml
+**/.env
+**/.env.*
+!.env.example
+!**/secrets.yaml.example
+
+# Home Assistant runtime
+homeassistant/config/*
+!homeassistant/config/.gitkeep
+!homeassistant/config/configuration.yaml.example
+
+# ESPHome build artifacts
+esphome/.esphome/
+esphome/**/.pioenvs/
+esphome/**/.piolibdeps/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+*.log
