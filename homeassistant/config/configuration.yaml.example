@@ -1,0 +1,15 @@
+# Example Home Assistant configuration for bathRadio.
+# Copy pieces into config/configuration.yaml after first HA boot if needed.
+# Default HA install already creates configuration.yaml — do not overwrite blindly.
+
+default_config:
+
+homeassistant:
+  name: bathRadio Lab
+  unit_system: metric
+  time_zone: Asia/Yekaterinburg
+  country: RU
+  language: ru
+
+# After flashing the ESP, add it via UI: Integrations → ESPHome.
+# Yandex Smart Home is usually installed via HACS, then configured in UI.
