@@ -65,7 +65,8 @@ text_sensor:
     icon: mdi:speaker
     update_interval: never
     entity_category: diagnostic
-    web_server_sorting_group: speaker
+    web_server:
+      sorting_group_id: speaker
     lambda: |-
       if (id(current_mode) == 1) return {"радио"};
       if (id(current_mode) == 2) return {"блютуз"};
@@ -77,7 +78,8 @@ switch:
     id: sw_radio
     icon: mdi:radio
     restore_mode: DISABLED
-    web_server_sorting_group: speaker
+    web_server:
+      sorting_group_id: speaker
     lambda: |-
       return id(current_mode) == 1;
     turn_on_action:
@@ -112,7 +114,8 @@ switch:
     id: sw_bt
     icon: mdi:bluetooth
     restore_mode: DISABLED
-    web_server_sorting_group: speaker
+    web_server:
+      sorting_group_id: speaker
     lambda: |-
       return id(current_mode) == 2;
     turn_on_action:
@@ -145,13 +148,15 @@ switch:
 binary_sensor:
   - platform: status
     name: "Связь"
-    web_server_sorting_group: speaker
+    web_server:
+      sorting_group_id: speaker
 
 sensor:
   - platform: wifi_signal
     name: "Wi‑Fi сигнал"
     update_interval: 60s
-    web_server_sorting_group: speaker
+    web_server:
+      sorting_group_id: speaker
 
 button:
   - platform: restart
