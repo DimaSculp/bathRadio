@@ -1,6 +1,8 @@
 # bathRadio
 
-Умная колонка для душа / туалета: **Алиса** переключает режимы на **ESP8266**, статус виден на локальной веб-странице. Сейчас — MVP без динамика и реального Bluetooth.
+Умная колонка для душа / туалета: **Алиса** переключает режимы на ESP, статус виден на локальной веб-странице.
+
+**MVP готов:** Алиса ↔ Home Assistant ↔ Feather HUZZAH (режимы радио / блютуз). Звук и реальный Bluetooth — следующий этап.
 
 [![ESP8266](https://img.shields.io/badge/MCU-Feather%20HUZZAH%20ESP8266-blue)](https://www.adafruit.com/product/2821)
 [![Home Assistant](https://img.shields.io/badge/Hub-Home%20Assistant-41BDF5)](https://www.home-assistant.io/)
@@ -83,10 +85,11 @@ docker compose up -d
 
 ## Вне MVP
 
-- Классический ESP32 + A2DP sink
+- Классический ESP32 + A2DP sink (8266 Bluetooth audio не тянет)
+- Регулятор громкости 1–10
 - microSD, I2S‑усилитель (MAX98357A и аналоги), водозащищённый динамик
 - Корпус под 3D-печать
-- Перенос HA с ноутбука на постоянный хост (backup → restore)
+- Перенос HA с ноутбука: [docs/ha-migration.md](docs/ha-migration.md)
 
 ## Лицензия
 
